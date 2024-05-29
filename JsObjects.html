@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h2>JavaScipt Objects</h2>
+<p id="dem"></p>
+<p id="demo"></p>
+<p id="mm"></p>
+<p id="nn"></p>
+<p id="ent"></p>
+<p id="json"></p>
+<p id="con"></p>
+
+    <script>
+        // Js Objects:
+        // Objects are variables too. But objects can contain many values.
+        const car = {
+            name: "Volvo", model : "500", color: "white"
+        }
+        document.getElementById("dem").innerHTML
+        = "The name of car is " + car.name;
+
+
+        // Using new object:
+        const person = new Object();
+        person.firsName = "John",
+        person.lastName = "DOe",
+        person.age = 50,
+        person.eyeColor = "blue";
+        document.getElementById('demo').innerHTML
+        = person.firsName + " is " + person.age + " years old.";
+
+
+        // Accessing object property
+        const house = {
+            houseName :"WhiteHouse",
+            owner: "bikash",
+            from : "Num",
+            fullNme: function() {
+                return this.houseName + " " + this.owner;
+            }
+                };
+        document.getElementById("mm").innerHTML
+        = "The model is of the house is " + house["houseName"];
+
+        document.getElementById('nn').innerHTML
+        = house.fullNme();
+
+
+// JS Object.entries() Method:
+const veg = {
+    Banana : 300,
+    Orange : 500,
+    Apple : 600
+};
+
+let txt = "";
+for(let[vegg,amount] of Object.entries(veg)){
+    txt += vegg + ":" + amount + "<br>";
+}
+document.getElementById('ent').innerHTML
+= txt;
+
+
+
+
+// JS JSON properties:
+const village = {
+    name : "Makalu",
+    word_no : 5,
+    total : 500
+};
+
+// Display JSON
+document.getElementById("json").innerHTML
+= JSON.stringify(village);
+
+
+
+
+// Object Constructors:
+// Constructor function for Person objects
+function ship(first, last, age, eye){
+    this.fname = first;
+    this.lname = last;
+    this.gg = age;
+    this.eyeColor = eye;;
+}
+
+// create a person object
+const myFather = new ship("Titanic", "Khalifa", 500, "black");
+
+// display age
+document.getElementById('con').innerHTML
+= 'My father is ' + myFather.gg + '.';
+    </script>
+    
+</body>
+</html>

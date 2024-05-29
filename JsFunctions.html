@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScipt Functions</h1>
+    <p>Accessing a function without() returns the function and not the function result:</p>
+    <p id="demo"></p>
+    <p id="dme"></p>
+
+
+    <script>
+
+    // Javascript Function:
+    // JS function is defined with the function keyword, followed by a name, followed by a parentheses():
+    // The parentheses my include parameters names seperated by commas: (parameter1, parameter2,........)
+    // The code to be excecuted, by the function, is placed inside curly brackets: {}
+
+    function toCelsius(f){
+        return (5/9) * (f- 32);
+    }
+    let value = toCelsius(77);
+    document.getElementById('demo').innerHTML = value;
+
+
+    // for id = "dme"
+    let text = "the temperature is " + tocel(67) + "Celsius.";
+    document.getElementById('dme').innerHTML
+    = text;
+    function tocel(fahrenheit){
+        return (5/9) * (fahrenheit - 32);
+    }
+    </script>
+</body> 
+</html>
