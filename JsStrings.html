@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JavaScript Strings</h2>
+    <p id="len"></p>
+    <p id="obj"></p>
+    <p id="char"></p>
+    <p id="str"></p>
+    <p id="case"></p>
+    <p id="con"></p>
+    <p id="trm"></p>
+    <p id="pad"></p>
+    <p id="rep"></p>
+    <p id="spi"></p>
+    <p id="sp"></p>
+    <p id="mat"></p>
+    <p id="in"></p>
+    <p id="tem"></p>
+    <script>
+        //length Property
+        let text = "Hello, I am Bikash Yamphu Rai";
+        document.getElementById("len").innerHTML
+        ="The length of the text is " +  text.length + '.';
+
+
+        // strings as object
+        let name = new String("Bikash");
+        document.getElementById("obj").innerHTML
+        = typeof text + "<br>" + typeof name;
+
+
+
+        // Extracting string characters
+        let sum = "My village name is num and it lies in Makalu  Num Guapalika and num is really beautiful place.";
+        document.getElementById("char").innerHTML
+        = sum.at(2) +" " + sum.charAt(5) + " " + sum.charCodeAt(5) + " " + sum[5];
+
+
+        // trim method: removes whitespaces from both sides of the strings.
+        let trm = "        Hello, I am in Bhaktapur right Now!         ";
+        document.getElementById("trm").innerHTML
+        = trm.trim() + "<br>" + trm.trimStart() + "<br>" + trm.trimStart();
+
+
+
+        // Extracting String Parts
+        document.getElementById("str").innerHTML
+        = sum.slice(1,10) + ' ' + sum.substring(0, 10) + " " + sum.substr(2, 7);
+
+        // converting toUpperCase() and toLowerCase()
+        document.getElementById('case').innerHTML
+        = sum.toUpperCase() + "<br> This is lowercase " + sum.toLowerCase();
+
+        // string to concat
+        document.getElementById('con').innerHTML
+        = sum.concat(" ", text) + "<br>" + text + " " + name;
+
+
+         /* String Padding
+            document.getElementById('pad').innerHTML
+            = "This is string Padding" + "<br>"  name.padStart(4, "0") + "<br>" + name.padEnd(4, "0");*/
+            // pad string is not supported in internet explorer.
+
+        // String Repeat()
+        document.getElementById('pad').innerHTML
+        = name.repeat(4);
+
+
+        // Replacing string content
+        document.getElementById('rep').innerHTML
+        = sum.replace('Num', "Sankhuwasabha") + "<br>" + sum.replace(/num/i, "Gola") + "<br>" + sum.replace(/num/g, "Gola");
+
+
+        // String Split Method
+        const myArray = sum.split(" ");
+        document.getElementById('spi').innerHTML
+        = myArray[4];
+
+
+       const myAr = sum.split(" ");
+
+        /*txt = "";
+        for(let i = 0; i<=myar.length; i++){
+        txt += myAr[i] + "<br>"
+        }
+        document.getElementById("sp").innerHTML
+        = txt;*/
+
+        document.getElementById("sp").innerHTML
+       =sum.indexOf("Num") + "<br>" + sum.lastIndexOf('num') + "<br>" + sum.search(/Makalu/);
+
+
+
+       // string match() , string startWtih() method and endswith() method
+       document.getElementById("mat").innerHTML
+       = sum.match(/um/ig);
+
+       // string includes
+       let par = "Hello guys, I am bikash Yamphu Rai"
+       document.getElementById('in').innerHTML
+       = par.includes("bikash") + "<br>" + par.startsWith("Hello") + "<br>" + par.startsWith("bikash") + "<br>" + par.endsWith("Rai");
+
+
+       // Strings Templates
+       let header = "Template Strings";
+       let tags = ['template strings', 'javascript', 'es6'];
+
+       let html =`<h2>${header}</h2><ul>`;
+        for (const x of tags){
+            html += `<li>${x}<li>`;
+        }
+        html += `<ul>`;
+            document.getElementById("tem").innerHTML
+            = html;
+    </script>
+</body>
+</html>
