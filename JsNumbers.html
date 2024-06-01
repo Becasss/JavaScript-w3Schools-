@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let x = 14;
+        let y =  12e5;
+        z = x + y;
+        console.log(z);
+
+        // Not a Number (NaN)
+        let a = 24 / "apple";
+        console.log(a);
+        console.log(typeof a); // type: number
+
+
+
+        // Infinity
+        let myNumber = 2;
+        let txt = "";
+        while(myNumber != Infinity){
+            myNumber = myNumber *myNumber;
+            txt = txt + myNumber + "line break:";
+        }
+        console.log(txt);
+        console.log(typeof Infinity);  // type: Number
+
+        
+        
+        // Hexadecimal Numbers
+        
+        let b = 0xFF;
+        console.log("0xFF = " + x);
+
+        
+        
+        // BigInt -- store big integer values that are too big to be repesented
+
+        let big = 1233434252342412123131232334354n;
+        let beg = BigInt("34234234412332344344343333233");
+        console.log(typeof big + typeof beg);
+
+
+
+
+        // BigInt -- Hex, Binary and Octal
+        let hex = 0x23324342343443443n;
+        let oct = 0o34342323323433343n;
+        let bin = 0b100000000000000000000000000000000000n;
+        console.log(hex + "<br>" + oct + "<br>" + bin);
+
+
+
+
+        // Number.isInteger()
+        console.log(Number.isInteger(10));
+        console.log(Number.isInteger(0.5));
+
+
+        // Number.isSafeInteger()
+
+        console.log(Number.isSafeInteger(10));
+        console.log(Number.isSafeInteger(12352566706351));
+
+
+
+        // JS Number Methods:
+        // toString() -- Returns a number as a string
+
+        let nem = 12345;
+        console.log(nem.toString());
+        console.log((123).toString());
+        console.log((100 + 23).toString());
+
+
+
+
+        // toExponential() Method -- returns a number written in exponential notation
+
+        let num = 9.43425;
+        console.log(num.toExponential());
+        console.log(num.toExponential(2));
+        console.log(num.toExponential(4));
+        console.log(num.toExponential(6));
+
+
+
+
+
+        // toFixed() Method: ---toFixed(2) is perfect for working money
+        console.log(num.toFixed(0));
+        console.log(num.toFixed(2));
+        console.log(num.toFixed(4));
+        console.log(num.toFixed(6));
+
+
+
+        // toPrecision() method -- returns a number written with  a number of decimals
+        console.log(num.toPrecision());
+        console.log(num.toPrecision(4));
+        console.log(num.toPrecision(6));
+
+
+
+        // valueOf() method -- returns a number as a number
+        console.log(num.valueOf());
+        console.log((23).valueOf());
+
+
+
+        // Converting Variables to Numbers
+        // Number() -- used to covert JavaScript variabels to numbers:
+
+        console.log(Number(true));
+        console.log(Number(false));
+        console.log(Number("10"));
+        console.log(Number("            10"));
+        console.log(Number("10.44"));
+        console.log(Number("10,33"));
+        console.log(Number("10 33"));
+        console.log(Number("Bikash"));
+
+
+        // Number() method used on date:
+        console.log(Number(new Date("1970-01-02")));
+
+
+
+
+        // parseInt() Method -- parses a  string and returns a whole numbers, spaces are allowed
+        console.log(parseInt("-10"));
+        console.log(parseInt('-10.3434'));
+        console.log(parseInt("10"));
+        console.log(parseInt("10.33"));
+        console.log(parseInt("10  6"));
+        console.log(parseInt('10 years'));
+        console.log(parseInt("years 10"));
+
+
+        // parseFloat() method -- parses a string and returns a number. Spaces  are allowed
+        console.log(parseFloat("10"));
+        console.log(parseFloat('10.33'));
+        console.log(parseFloat("10 20 30"));
+        console.log(parseFloat("10 years"));
+        console.log(parseFloat("years 10"));
+
+
+
+        // Javascript Numbers Properties
+
+        // EPSILON -- The difference between 1 and the smallest number > 1
+        console.log(Number.EPSILON);
+
+
+
+
+        // MAX_VALUE property ---The Largest number possible in Javascript
+        console.log(Number.MAX_VALUE);
+
+
+
+
+
+
+        // MIN_VALUE property  --- the smallest number possible in Javascript
+        console.log(Number.MIN_VALUE);
+
+
+
+
+
+        // MAX_SAFE_INTEGER method ----- the maximum safe integer(2^53 - 1)
+        
+        
+        // MIN_SAFE_INTEGER method ---- the minimum safe integer -(2^53-1)
+
+        // POSITIVE_INFINITY ---- Infinity (returned on overflow)
+
+
+        // NEGATIVE_INFINITY ---- Negative infinity (returned on overflow)
+
+
+        // NAN - A NOT-a- Number" value
+    </script>
+</body>
+</html>
