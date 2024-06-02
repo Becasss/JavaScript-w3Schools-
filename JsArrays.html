@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p id="loop"></p>
+    <p id="for"></p>
+    <p id="nes"></p>
+    <p id="fnd"></p>
+    <p id="index"></p>
+    <button onclick="myfunction1()">Sort alphabetically</button>
+    <button onclick="myfunction2()">sort Numerically</button>
+    <p id="alb"></p>
+    <p id="fnc"></p>
+    <script>
+        // Array is a special variable, which can hold more than one value.
+        // syntax: const array_name = [item_1, item_2, ......]
+
+
+        // Using thee Js keyword new
+
+        const cars = new Array("Saab", "Volvo", "BMW");
+        console.log(cars+ "\n" + typeof cars);   // type : object
+        
+
+        // Accessing Array Elements ----> by referring the index number.
+        let car = cars[2];
+        console.log(car);
+
+        console.log(cars[0] + "\n Accessing the last index " + cars[cars.length-1]);
+
+
+
+        // Changing the array
+        cars[1] = "Mercedes";
+        console.log(cars);
+
+
+
+        // Array properties and Methods
+
+        // Length Property
+        console.log(cars.length);
+
+
+        // Looping  array elements
+        const fruits = ["Banana", "Apple", "Cherry", "Orange", "Mango"];
+
+        let text = '<ul>';
+        for (let i = 0; i < fruits.length; i ++){
+            text += '<li>' + fruits[i] + "</li>";
+        }
+        text  += "</ul>";
+        document.getElementById("loop").innerHTML
+        = text;
+
+
+
+        // forEach(function) method
+        let txt = "<ul>";
+            fruits.forEach(myFunction);
+            txt += "</ul";
+
+            document.getElementById("for").innerHTML
+            = txt;
+
+            function myFunction(value){
+                txt += '<li>'+ value + "</li>";            
+            }
+
+
+        
+            // Adding Array Elements--push() method
+            console.log(fruits.push("Straberry")); // Adds a new element Strawberry at the end of the array
+
+
+
+            // Nested arrays and objects
+            let x = "";
+            const myObj = {
+                name : "Bikash",
+                age: 27,
+                cars: [
+                    {name:"Ford", models:["Mustang","Focus", "Fiesta"]},
+                    {name:"Bmw", models:["320", 'X3', 'x5']},
+                    {name:"Fliat", models:["500", "Panda"]}
+            ]
+            }
+            for (let i in myObj.cars){
+                x += "<h2>" + myObj.cars[i].name + "</h2>";
+                for(let j in myObj.cars[i].models){
+                    x += myObj.cars[i].models[j] + "<br>";
+                }
+            }
+            document.getElementById("nes").innerHTML
+            = x;
+
+
+
+
+            // Basic Array Methods
+            
+            // Array length:
+            console.log(fruits.length);
+
+
+
+            // JS Array toString() --- converts an array to a string of (comma seperated) array values.
+            console.log(fruits.toString());
+
+
+
+
+            // JavaScript Array at()
+            fruit = fruits.at(2);
+            console.log(fruit);
+
+
+
+            // Javascript Array Join()
+            console.log(fruits.join("*"));
+
+
+            // Javascript Array Pop() --- removes the last element from the an array
+            console.log(fruits.pop());
+
+
+            // JS Array push() - adds a new element to an array(at the end)
+            console.log(fruits.push("Kiwi", "Orange"));
+
+
+            // Javascript Shift() --- removes the first array element  and shifts all other elements to lower index.
+            console.log(fruits.shift());
+
+
+
+            // Javascript unshift() -- adds a new element to an array (at the begining)
+            console.log(fruits.unshift("lemon"));
+
+
+
+            // Javascript Array Concat()
+
+            const vegetables = ['Potatoes', 'raddish', 'Carrot', 'Birjal'];
+            const curry = fruits.concat(vegetables);
+            console.log(curry);
+
+
+
+            // Array copyWithin() -- method copies array elements to another position in an array
+            copy = fruits.copyWithin(2,0);
+            console.log(copy); // copy to index 2, all elements from index 0
+
+            console.log(vegetables.copyWithin(2,0,2)); // copy to index2, the elements from index 0 to 2
+
+
+
+            // Flattering an Array -- is the process of reducing the dimensionality of an array
+            const myArr = [[1,2], [3,4],[5,6],[7,8]];
+            console.log(myArr.flat());
+
+
+
+
+
+            // Javascript Array splice() -- used to add new items to an array
+            console.log(fruits.splice(2,0, "Lemon", "Banana")); //first parameter(2) where the new elements should be added, (0) defines how many elemments should be removed and
+                                                                // rest ("Lemon", "Banana") define the new elements to be added.
+
+
+
+            // Javascript Array slice() -- slices out a piece of an array into a new array
+            console.log(fruits.slice(1));
+
+
+
+            // Array indexOf()
+            console.log(fruits.indexOf("Lemon"));
+
+
+            // Array lastIndexOf()
+            console.log(fruits.lastIndexOf("Lemon"));
+
+
+            // Array include()
+            console.log(fruits.includes("Banana"));
+
+
+            // Array find()
+            const numbers = [12, 34, 56, 19, 20];
+            let first = numbers.find(myfunction);
+            document.getElementById("fnd").innerHTML
+            = "First number over 18 is" + first;
+
+            function myfunction(value, index, array){
+                return value>18;
+            }
+
+
+            // Javascript Array findIndex()
+            document.getElementById('index').innerHTML
+            = "First number over 18 has index "+ numbers.findIndex(myfun);
+
+            function myfun(value, index, array){
+                return value > 18;
+            }
+
+
+
+
+    
+            // Javascript Sorting Arrays
+
+            //sorting an Array -- sort() method sorts an array alphabetically
+            const frue = ['Apple', "Mango", "Cherry", "Zebra"];
+            console.log(frue.sort());
+
+
+
+            // Javascript Reversing an Arrays
+            console.log(frue.reverse());
+
+
+            // Javascript Array toSorted() Method
+            console.log(frue.toSorted());
+            console.log(fruits.toSorted());
+
+
+            // Js Array toReverse() method
+            console.log(fruits.toReversed());
+
+
+            // Numeric Sort()
+            const points = [40, 100, 1, 5, 25, 10];
+            points.sort(function(a,b){return a-b});
+            console.log(points);
+
+
+            // The Compare Function
+            document.getElementById('alb').innerHTML
+            = points;
+
+            function myfunction1(){
+                points.sort();
+                document.getElementById('alb').innerHTML= points;
+            }
+            function myfunction2(){
+                points.sort(function(a,b){return a -b});
+                document.getElementById('demo').innerHTML
+                = ponts;
+            }
+
+
+
+
+
+            //  Find Min or Max with sort()
+            points.sort(function(a,b){return a-b});
+            console.log(points[0]); // the lowest number
+            console.log(points[points.length-1]); // contains the highest value
+
+
+
+
+            // Javascript Iteration methods
+             // Javascript Array forEach()
+             const number = [45, 67, 98,100];
+             let txet = '';
+             number.forEach(myfnc);
+             document.getElementById("fnc").innerHTML
+             = txet;
+
+             function myfnc(value, index, array){
+                txet += value + "<br>";
+             }
+
+
+             // Javascript Array map()
+             const num = number.map(myfncc);
+             console.log(num);
+             function myfncc(value,index,array){
+                return value*2;
+             }
+
+
+             // Javascript Array flatMap()
+             const myArray = [1,2,3,5,6,7];
+             const newArr = myArray.flatMap((x) => x*2);
+             console.log(newArr);
+
+
+
+
+             // Javascript Array filter
+             const over18 = numbers.filter(myfuun);
+             console.log(over18);
+             function myfuun(value, index,array){
+                return value>18;
+             }
+
+
+             // Javascript Array Reduce()
+             let sum = numbers.reduce(myfnn);
+             function myfnn(total, value, index, array){
+                return total + value;
+             }
+             console.log(sum);
+
+
+
+             // Javascript Array every() method
+             let allvoer18 = numbers.every(mee);
+             function mee(value, index, array){
+                return  value >18;
+             }
+             console.log(allvoer18); // the every() method checks if all array values passa test.
+
+
+
+
+             // Javascript Array Some() Method:
+             let someovr18 = numbers.some(min);
+
+             function min(value, index, array){
+                return value > 18;
+             }
+             console.log(someovr18); // checks if some array value passa test:
+
+
+
+
+             // Javascript Array.form() Method:
+           //  const arr = Array.form("ASDFGHLK");
+             // console.log(arr); // Is not supported by Internet Explorer:
+
+
+
+             // Javascript Arrays Keys() Method:
+             const keys = fruits.keys();
+             let ttx = '';
+             for (let x of keys){
+                ttx  += x + "\n";
+             }
+             console.log(ttx); // return an array Iteraor object with the keys of the array
+
+
+
+             // Javascript Array entries() method:
+             const f = fruits.entries();
+                for(let x of f){
+                    console.log(x + "\n"); // entries() returns an Array Iterator object with key/value pairs:
+                }
+             
+    </script>
+</body>
+</html>
