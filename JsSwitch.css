@@ -1,0 +1,15 @@
+p{
+    background-color: antiquewhite;
+    color: black;
+    border: 1px solid black;
+    margin: 0px;
+    padding: 14px;
+    transition: width 3s;
+    width: 100px;
+    height: 100px;
+}
+p:hover{
+    background-color: aqua;
+    color: black;
+    width: 300px;
+} 
